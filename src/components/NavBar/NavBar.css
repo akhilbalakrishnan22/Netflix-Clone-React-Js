@@ -11,18 +11,18 @@
     transition: all 0.5s;
 }
 
-.navbar-dark {
+.navbar__dark {
     background-color: #111;
 }
 
-.logo {
+.navbar__logo {
     position: fixed;
     left: 20px;
     width: 80px;
     object-fit: contain;
 }
 
-.avatar {
+.navbar__avatar {
     position: fixed;
     right: 20px;
     width: 30px;
