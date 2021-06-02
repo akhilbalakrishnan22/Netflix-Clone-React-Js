@@ -29,20 +29,25 @@ function Row({ title, url, isLarge }) {
         },
     };
 
-    const getTrailer = (movie) => {
-        // console.log(movie);
+    const getTrailer = (obj) => {
+        console.log(obj);
         if (trailerUrl) {
             setTrailerUrl("");
         }
         else {
-            movieTrailer(movie?.title || "")
+            movieTrailer(obj?.original_name || obj?.original_title || obj?.title || obj?.name || "")
                 .then((response) => {
                     // console.log(response);
-                    const urlParams = new URLSearchParams(new URL(response).search);
-                    
-                    //https://www.yoututbe.com/watch?v=XtMhy8QKqU
-                    setTrailerUrl(urlParams.get('v'));
-                    // console.log(urlParams.get('v'));
+                    if (response === null) {
+                        alert('Trailer not found');
+                    }
+                    else {
+                        const urlParams = new URLSearchParams(new URL(response).search);
+
+                        //https://www.yoututbe.com/watch?v=XtMhy8QKqU
+                        setTrailerUrl(urlParams.get('v'));
+                        // console.log(urlParams.get('v'));
+                    }
                 })
                 .catch((error) => console.log(error));
         }

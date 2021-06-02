@@ -27,10 +27,36 @@
     max-height: 250px;
 }
 
-.row__poster:hover {
+/* .row__poster:hover {
     transform: scale(1.08);
 }
 
 .row__posterLarge:hover {
     transform: scale(1.09);
+} */
+
+.row__posters:focus-within .row__poster, .row__posters:hover .row__poster {
+    transform: translateX(-25%);
+}
+
+.row__poster:focus~.row__poster, .row__poster:hover~.row__poster {
+    transform: translateX(25%);
+}
+
+.row__poster.row__poster:focus, .row__poster.row__poster:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.row__posters:focus-within .row__posterLarge, .row__posters:hover .row__posterLarge {
+    transform: translateX(-25%);
+}
+
+.row__posterLarge:focus~.row__posterLarge, .row__posterLarge:hover~.row__posterLarge {
+    transform: translateX(25%);
+}
+
+.row__posters .row__posterLarge:focus, .row__posters .row__posterLarge:hover {
+    transform: scale(1.2);
+    z-index: 1;
 }
