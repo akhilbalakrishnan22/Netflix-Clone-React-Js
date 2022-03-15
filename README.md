@@ -19,3 +19,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - To use react-youtube to display the trailer
 
 [Demo](https://netflix-clone-85d95.web.app/)
+
+## Firebase
+Firebase: deploy react app with firebase hosting
